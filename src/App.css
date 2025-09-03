@@ -1,0 +1,161 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.todo-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 450px;
+  color: #fff;
+  animation: fadeIn 1s ease;
+}
+
+/* Heading */
+.todo-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+/* Form */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+  color: #ccc;
+}
+
+/* Buttons */
+button {
+  background: #00d9ff;
+  border: none;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px #00d9ff;
+}
+
+button:hover {
+  background: #00bcd4;
+  transform: scale(1.05);
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+  animation: fadeInUp 0.5s ease;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+li span {
+  cursor: pointer;
+  font-size: 16px;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+/* Completed Task */
+li span.completed {
+  text-decoration: line-through;
+  color: #00ff7f;
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ff7f;
+}
+
+/* Delete Button */
+li button {
+  background: #ff4d4d;
+  padding: 6px 10px;
+  font-size: 14px;
+  box-shadow: 0 0 8px #ff4d4d;
+}
+
+li button:hover {
+  background: #e60000;
+}
+
+/* Clear All Button */
+.clear-btn {
+  margin-top: 15px;
+  width: 100%;
+  background-color: #ff0066;
+  box-shadow: 0 0 10px #ff0066;
+}
+
+.clear-btn:hover {
+  background-color: #cc0052;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .todo-container {
+    padding: 20px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
